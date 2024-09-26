@@ -27,20 +27,15 @@ $posts = $post_stmt->fetchAll();
     <form action="<?= isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php' ?>" method="get">
         <button type="submit">Back to Last Page</button>
     </form>
-
     <h1><?= htmlspecialchars($thread['title']) ?></h1>
     <p><?= nl2br(htmlspecialchars($thread['content'])) ?></p>
-<!-- Only show delete button if user is the thread creator -->
-        <form method="POST" action="delete_thread.php">
-            <input type="hidden" name="thread_id" value="<?= $thread_id ?>">
-            <button type="submit" onclick="return confirm('Are you sure you want to delete this thread?');">Delete Thread</button>
-        </form>
 
     <ul>
         <?php foreach ($posts as $post): ?>
             <li><?= htmlspecialchars($post['content']) ?> - by <?= htmlspecialchars($post['username']) ?></li>
         <?php endforeach; ?>
     </ul>
+
 
 
     <?php if (isset($_SESSION['user_id'])): ?>
@@ -51,7 +46,11 @@ $posts = $post_stmt->fetchAll();
     </form>
 
     <?php if ($_SESSION['user_id'] == $thread['user_id']): ?>
-        
+        <!-- Only show delete button if user is the thread creator -->
+        <form method="POST" action="delete_thread.php">
+            <input type="hidden" name="thread_id" value="<?= $thread_id ?>">
+            <button type="submit" onclick="return confirm('Are you sure you want to delete this thread?');">Delete Thread</button>
+        </form>
     <?php endif; ?>
     
     <?php else: ?>
