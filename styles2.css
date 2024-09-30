@@ -1,0 +1,93 @@
+/* General body styling */
+body {
+    background-color: #ffffff; /* Classic gray background */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    color: #000000;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Basic container styling */
+.container {
+    background-color: #ffffff;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 3px solid #ffffff; /* Bold blue border */
+    
+    border-radius: 0; /* No rounded corners */
+}
+
+/* Headings */
+h1, h2 {
+    color: #000000; /* Red heading text */
+    font-family: 'Verdana', sans-serif;
+    box-sizing: border-box 3px;
+    align-items: center;
+    
+    border-bottom: 3px solid rgb(5, 15, 15);
+    border-top: 3px none rgb(5, 15, 15);
+    inset: 320px 0% auto;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    margin-left: 80px;
+    position: static;
+    z-index: 1; /* Yellow background for headings */
+    padding: 5px;
+    text-align: center;
+}
+
+/* Form inputs */
+input[type="text"], input[type="password"], input[type="email"], textarea {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00ff00; /* Bright green button */
+    color: #000000;
+    border: 2px solid #000000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0000ff; /* Bright yellow on hover */
+}
+
+/* Thread list items */
+ul {
+    list-style-type: square; /* Use square bullets */
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #000000;
+    font-size: 14px;
+}
+
+/* Links */
+a {
+    color: #0000ff; /* Classic blue links */
+    text-decoration: underline; /* Underlined links */
+}
+
+a:hover {
+    color: #ff0000; /* Red when hovered */
+}
+
+/* Footer or small text */
+small {
+    color: #808080;
+    font-family: 'Verdana', sans-serif;
+}
